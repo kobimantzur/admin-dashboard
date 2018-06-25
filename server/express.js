@@ -5,7 +5,7 @@ import path from "path"
 const isProd = process.env.NODE_ENV === "production"
 if (!isProd) {
   const webpack = require("webpack")
-  const config = require("../../config/webpack.dev.js")
+  const config = require("../config/webpack.dev.js")
   const compiler = webpack(config)
 
   const webpackDevMiddleware = require("webpack-dev-middleware")(

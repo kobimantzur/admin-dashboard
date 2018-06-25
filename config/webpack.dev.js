@@ -68,6 +68,25 @@ module.exports = {
         ]
       },
       {
+        test: /\.less$/,
+        use: [
+          {
+            loader: 'style-loader',
+            options: {
+              sourceMap: process.env.NODE_ENV !== 'production',
+            },
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              sourceMap: process.env.NODE_ENV !== 'production',
+            },
+          },
+          'less-loader',
+        ],
+      },
+      {
         test: /\.jpg$/,
         use: [
           {
